@@ -30,7 +30,7 @@ do "./t/lib.pl";
     $dbh = eval {
 	local $SIG{__WARN__} = sub { push @msg, @_ };
 	local $SIG{__DIE__}  = sub { push @msg, @_ };
-	DBI->connect ("dbi:DBM:", , undef, undef, {
+	DBI->connect ("dbi:DBM:", undef, undef, {
 	    f_dir               => "./hopefully-doesnt-existst",
 	    sql_identifier_case => 1,
 	    RaiseError          => 1,
